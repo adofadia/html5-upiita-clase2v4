@@ -3,13 +3,51 @@
         <title>JavaScript</title>
         <meta charset="UTF-8"/>
         <script>
-        
+        	var c=0;
             //funcion
-            
+            function saludar(nombre){
+            	alert("Buenos dias"+nombre);
+            	return 0;
+            }
+            //var numero = saludar("Daniela");
             //funcion anonima
+            var sumar = function(a,b){
+            	var c = a+b;
+            	return c;
+            };
             
+            var multitplicar = function(a,b){
+            	var c = a * b;
+            	return c;
+            };
+            
+            var suma = sumar(2,5);
+            var multiplicacion = multitplicar(2,5);
+            document.write("<h2>EL VALOR DE C ES: "+c+"</h2>");
+            document.write("<h2>SUMA: "+suma+"</h2>");
+            document.write("<h2>Multiplicacion: "+multiplicacion+"</h2>");
             //una funcion como argumento
             //sepuede definir ahi mismo
+            var operacion = function(unaFuncion){
+            	var resultado=unaFuncion(3,4);
+            	alert("El resultado es:"+resultado);
+            };
+			
+			operacion(sumar);
+			
+			operacion(function(a, b){
+				var c = a-b;
+				return c;
+			});
+
+			//CLOSURE - autoejecutables
+			(function(){
+				var funcion1 = function(){
+					document.write("soy la funcion 1");
+				};
+				var dato = 5;
+				funcion1();
+			})();
 
         </script>
     </head>
